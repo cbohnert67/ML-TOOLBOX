@@ -11,7 +11,7 @@ Ce projet est une implémentation d'un système de Machine Learning de bout en b
 - `.gitignore`: Fichiers et répertoires à ignorer par Git.
 - `requirements.txt`: Liste des dépendances Python.
 
-```Unicode
+```python
 SOURCE/
 ├── data/
 │   ├── raw/
