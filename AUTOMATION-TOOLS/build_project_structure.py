@@ -43,7 +43,7 @@ def create_structure(base_path, structure):
                     open(os.path.join(base_path, file), 'a').close()
 
 # Créer la structure du projet
-create_structure(".", project_structure)
+create_structure("..", project_structure)
 
 # Écrire le contenu des fichiers README et autres fichiers
 readme_contents = {
@@ -66,6 +66,7 @@ readme_contents = {
 
 # Écrire le contenu dans les fichiers README et autres fichiers
 for path, content in readme_contents.items():
+    os.makedirs(os.path.dirname(path), exist_ok=True)  # Create the necessary directories
     with open(path, 'w', encoding='utf-8') as file:
         file.write(content)
 
