@@ -32,7 +32,7 @@ class MLPipeline:
         data = self.data_loader.get_data()
         self.preprocessor.handle_missing_values()
         self.preprocessor.scale_features()
-        self.feature_engineer.create_features()
+        #self.feature_engineer.create_features()
         self.feature_engineer.select_features()
         X = self.feature_engineer.data.drop('target', axis=1)
         y = self.feature_engineer.data['target']

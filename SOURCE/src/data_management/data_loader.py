@@ -12,12 +12,11 @@ class DataLoader:
         # Si la source est un DataFrame pandas, on l'utilise directement
         if isinstance(self.source, pd.DataFrame):
             self.data = self.source
+         # Sinon, on suppose que c'est un chemin vers un fichier CSV
+        elif isinstance(self.source, str) and self.source.endswith('.csv'):
+            self.data = pd.read_csv(self.source)
         else:
-            # Sinon, on suppose que c'est un chemin vers un fichier CSV
-            if isinstance(self.source, str) and self.source.endswith('.csv'):
-                self.data = pd.read_csv(self.source)
-            else:
-                raise ValueError("La source doit être un DataFrame pandas ou un chemin vers un fichier CSV.")
+            raise ValueError("La source doit être un DataFrame pandas ou un chemin vers un fichier CSV.")
 
     def get_data(self):
         return self.data

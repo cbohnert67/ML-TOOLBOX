@@ -14,7 +14,8 @@ class FeatureEngineer:
         Create new features based on existing data.
         """
         # Example: Create a new feature as the sum of two existing features
-        self.data['new_feature'] = self.data['feature1'] + self.data['feature2']
+        #self.data['new_feature'] = self.data['feature1'] + self.data['feature2']
+        pass
 
     def select_features(self, method: str = 'correlation'):
         """

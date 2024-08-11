@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.base import BaseEstimator
-from sklearn.metrics import accuracy_score, mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import cross_val_score
 
 
@@ -22,10 +22,10 @@ class ModelEvaluator:
         Compute performance metrics.
         """
         predictions = self.model.predict(self.X_test)
-        accuracy = accuracy_score(self.y_test, predictions)
         mse = mean_squared_error(self.y_test, predictions)
-        print(f"Accuracy: {accuracy}")
-        print(f"MSE: {mse}")
+        r2 = r2_score(self.y_test, predictions)
+        print(f"Mean Squared Error: {mse}")
+        print(f"R^2 Score: {r2}")
 
     def cross_validate(self, cv: int = 5):
         """
